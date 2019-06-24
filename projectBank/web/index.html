@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GelnicaBank</title>
+</head>
+<style>
+#boxMain {
+
+width:100%;
+height:35%;
+display:flex;
+justify-content: flex-center;
+background: #F0EFEC;
+
+}
+
+
+</style>
+<body>
+<div id="boxMain">
+	<form id="formLogin">
+    	<label>Username</label>
+    	<input type="text" name="username" id="field1">
+    	<label>Password</label>
+    	<input type="password" name="pass" id="field2">
+    	<div id="error401">You entered wrong login name or password</div>
+    	<div id="error403">You have something wrong in request</div>
+    	<input type="button" name="submit" value="Login" onclick="getData()">
+    </form>
+</div>	
+
+</body>
+</html>

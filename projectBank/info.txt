@@ -1,0 +1,11 @@
+Tabulka:
+Employee- id,lnamme,fname,position
+Position- id,name
+LoginEmp- id, FK-ide, 
+
+JavaFX: 
+GLBank
+Login
+Password
+
+,
