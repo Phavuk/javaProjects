@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+  height: 100%;
+}
+th
+.outcell { 
+      background-color:#fff;
+      border:0px #000 solid;
+      text-align:center;
+      font-family:arial;
+  }
+  .incell { 
+      background-color:#fff;
+      border:1px #000 solid;
+      text-align:center;
+      font-family:arial;
+  }
+  @media all and (max-width: 576px) {
+  .table1 { width:100%; table-layout: fixed; }
+  .outcell, .incell { font-size:small; }
+}
+@media all and (min-width: 577px) {
+  .outcell { 
+      width:50px;
+      height:43px;
+      font-size:22px;
+  }
+  .incell { 
+      width:50px;
+      height:43px;
+      font-size:20px;
+  }
+}
+</style>
+
+</head>
+<body>
+<button type="button" onclick="initBoard()">Place the boats on the water</button>
+<table id="table12" class="table1" style="border: 1px #000 solid; border-collapse: collapse">
+        <tr>
+          <td class="outcell"><b>&times;</b></td>
+          <td class="outcell">A</td>
+          <td class="outcell">B</td>
+          <td class="outcell">C</td>
+          <td class="outcell">D</td>
+          <td class="outcell">E</td>
+          <td class="outcell">F</td>
+          <td class="outcell">G</td>
+          <td class="outcell">H</td>
+        
+        </tr>
+        <tr>
+          <td class="outcell">1</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          
+        </tr>
+        <tr>
+          <td class="outcell">2</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell">O</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          
+        </tr>
+        <tr>
+          <td class="outcell">3</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+         
+        </tr>
+        <tr>
+          <td class="outcell">4</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          
+        </tr>
+        <tr>
+          <td class="outcell">5</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          
+        </tr>
+        <tr>
+          <td class="outcell">6</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          
+        </tr>
+        <tr>
+          <td class="outcell">7</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+         
+        </tr>
+        <tr>
+          <td class="outcell">8</td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          <td class="incell"></td>
+          
+         
+        </tr>
+        
+        </table>
+
+</body>
+<script type="text/javascript">
+    function initBoard() {
+  let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+  let red = 'img/red.png';
+  let black = 0;
+
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 5; j++) {
+      if (j%2==0 && i%2==0) {
+        board[i][j]=red;
+      }
+      if (j%2!=0 && i==1) {
+        board[i][j]=red;
+      }
+    }
+  }
+
+  for (var i = 7; i > 4; i--) {
+    for (var j = 0; j < 8; j++) {
+      if (j%2==0 && i==6) {
+        board[i][j]=black;
+      }
+      if (j%2!=0 && i%2!=0) {
+        board[i][j]=black;
+      }
+    }
+  }
+  drawBoard(board);
+}
+
+function drawBoard(board) {
+  console.log(board.length);
+  console.log(board);
+
+  let index = 0;
+
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board.length; j++) {
+      document.getElementsByName('cell')[index].src = board[i][j];
+      index++;
+    }
+  }
+  console.log(index);
+}
+
+</script>
+</html>
